@@ -14,21 +14,30 @@ function App() {
   const generateEmailName = useCallback(() => {
     let value = firstName + lastName;
     setEmailName(value);
-  }, [firstName, lastName])
+  }, [firstName, lastName]);
 
   const generateDomainExtensionName = useCallback(() => {
     let value = "@" + domainName + "." + extension;
     setDomainExtensionName(value);
-  }, [domainName, extension])
+  }, [domainName, extension]);
 
   useEffect(() => {
     generateEmailName();
     generateDomainExtensionName();
-  }, [firstName, lastName, domainName, extension])
+  }, [firstName, lastName, domainName, extension]);
+
+  const generateEmail = () => {
+    return emailName + domainExtensionName;
+  };
+
+  const copyToClipboard = () => {
+    window.navigator.clipboard.writeText(generateEmail());
+    alert("E-mail address has been copied to the clipboard!");
+  };
 
   return (
     <div className="container-fluid p-5">
-      <h1 className="my-3">Domain E-Mail Generator</h1>
+      <h1 className="my-2">Domain E-Mail Generator</h1>
       <div class="card text-center">
         <div class="card-header">
           <ul class="nav nav-underline">
@@ -155,19 +164,28 @@ function App() {
                 class="form-select"
                 aria-label="Default select example"
                 value={extension}
-                onChange={(e) => setExtName(e.target.value)}
+                onChange={(e) => setExtensionName(e.target.value)}
               >
                 <option value="com">.com</option>
                 <option value="co.in">.co.in</option>
                 <option value="gov.in">.gov.in</option>
               </select>
               <div class="input-group mb-3 my-3">
-                <input type="text" class="form-control" value={emailName} disabled />
+                <input
+                  type="text"
+                  class="form-control"
+                  value={emailName}
+                  disabled
+                />
                 <span class="input-group-text" id="basic-addon1">
                   {domainExtensionName}
                 </span>
               </div>
-              <button type="button" class="btn btn-primary">
+              <button
+                onClick={copyToClipboard}
+                type="button"
+                class="btn btn-primary"
+              >
                 Copy
               </button>
             </div>
