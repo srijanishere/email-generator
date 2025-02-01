@@ -1,16 +1,30 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [domainName, setDomainName] = useState("domain");
   const [extension, setExtensionName] = useState("com");
   const [emailName, setEmailName] = useState("");
-  const [extName, setExtName] = useState("");
+  const [domainExtensionName, setDomainExtensionName] = useState("");
+
+  const generateEmailName = useCallback(() => {
+    let value = firstName + lastName;
+    setEmailName(value);
+  }, [firstName, lastName])
+
+  const generateDomainExtensionName = useCallback(() => {
+    let value = "@" + domainName + "." + extension;
+    setDomainExtensionName(value);
+  }, [domainName, extension])
+
+  useEffect(() => {
+    generateEmailName();
+    generateDomainExtensionName();
+  }, [firstName, lastName, domainName, extension])
 
   return (
     <div className="container-fluid p-5">
@@ -93,7 +107,10 @@ function App() {
               </tbody>
             </table>
           </p>
-          <p className="card-text text-danger lead mb-5"><b>Note</b> : This web-app does NOT collect/store any user data, it's application solely is based on experimental purposes</p>
+          <p className="card-text text-danger lead mb-5">
+            <b>Note</b> : This web-app does NOT collect/store any user data,
+            it's application solely is based on experimental purposes
+          </p>
           <div class="card" id="generator">
             <h5 class="card-header">Featured</h5>
 
@@ -145,8 +162,10 @@ function App() {
                 <option value="gov.in">.gov.in</option>
               </select>
               <div class="input-group mb-3 my-3">
-                <input type="text" class="form-control" disabled />
-                <span class="input-group-text" id="basic-addon1">{extName}</span>
+                <input type="text" class="form-control" value={emailName} disabled />
+                <span class="input-group-text" id="basic-addon1">
+                  {domainExtensionName}
+                </span>
               </div>
               <button type="button" class="btn btn-primary">
                 Copy
