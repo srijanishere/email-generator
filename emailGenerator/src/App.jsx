@@ -4,7 +4,12 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [domainName, setDomainName] = useState("domain");
+  const [extension, setExtensionName] = useState("com");
+  const [emailName, setEmailName] = useState("");
+  const [extName, setExtName] = useState("");
 
   return (
     <div className="container-fluid p-5">
@@ -99,6 +104,7 @@ function App() {
                   type="text"
                   class="form-control"
                   placeholder="First Name"
+                  value={firstName}
                 />
               </div>
               <div class="input-group mb-3">
@@ -109,6 +115,7 @@ function App() {
                   type="text"
                   class="form-control"
                   placeholder="Last Name"
+                  value={lastName}
                 />
               </div>
               <div class="input-group mb-3">
@@ -119,16 +126,21 @@ function App() {
                   type="text"
                   class="form-control"
                   placeholder="Domain Name"
+                  value={domainName}
                 />
               </div>
-              <select class="form-select" aria-label="Default select example">
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                value={extension}
+              >
                 <option value="com">.com</option>
                 <option value="co.in">.co.in</option>
                 <option value="gov.in">.gov.in</option>
               </select>
               <div class="input-group mb-3 my-3">
                 <input type="text" class="form-control" disabled />
-                <span class="input-group-text" id="basic-addon1"></span>
+                <span class="input-group-text" id="basic-addon1">{extName}</span>
               </div>
               <button type="button" class="btn btn-primary">
                 Copy
