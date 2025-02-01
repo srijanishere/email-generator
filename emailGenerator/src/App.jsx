@@ -28,9 +28,9 @@ function App() {
 
   const generateEmail = () => {
     return emailName + domainExtensionName;
-  };
+  }
 
-  const copyToClipboard = () => {
+  const copyToClipboard = async () => {
     window.navigator.clipboard.writeText(generateEmail());
     alert("E-mail address has been copied to the clipboard!");
   };
