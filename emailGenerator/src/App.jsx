@@ -17,9 +17,12 @@ function App() {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#something">
+              <a class="nav-link text-black" href="#generator">
                 E-mail Generator
               </a>
+            </li>
+            <li className="nav-item">
+            <span class="badge rounded-pill text-bg-dark">Beta</span>
             </li>
           </ul>
         </div>
@@ -74,13 +77,63 @@ function App() {
                   <th scope="row">3</th>
                   <td>Bootstrap</td>
                   <td>
-                  Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.
+                    Powerful, extensible, and feature-packed frontend toolkit.
+                    Build and customize with Sass, utilize prebuilt grid system
+                    and components, and bring projects to life with powerful
+                    JavaScript plugins.
                   </td>
                 </tr>
               </tbody>
             </table>
           </p>
-          
+          <div class="card" id="generator">
+            <h5 class="card-header">Domain E-Mail Generator</h5>
+            <div class="card-body">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                  First Name
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="First Name"
+                />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                  Last Name
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Last Name"
+                />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                  Domain Name
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Domain Name"
+                />
+              </div>
+              <select class="form-select" aria-label="Default select example">
+                <option value="com">.com</option>
+                <option value="co.in">.co.in</option>
+                <option value="gov.in">.gov.in</option>
+              </select>
+              <div class="input-group mb-3 my-3">
+                <input type="text" class="form-control" disabled />
+                <span class="input-group-text" id="basic-addon1"></span>
+              </div>
+              <button type="button" class="btn btn-primary">
+                Copy
+              </button>
+            </div>
+            <div class="card-footer text-body-secondary">Made with love by Srijan Bandyopadhyay</div>
+          </div>
         </div>
       </div>
     </div>
