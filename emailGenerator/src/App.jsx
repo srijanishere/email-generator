@@ -92,6 +92,7 @@ function App() {
               </tbody>
             </table>
           </p>
+          <p className="card-text text-danger lead mb-5"><u>Note</u> : This web-app does NOT collect/store any user data, it's application solely is based on experimental purposes</p>
           <div class="card" id="generator">
             <h5 class="card-header">Featured</h5>
 
