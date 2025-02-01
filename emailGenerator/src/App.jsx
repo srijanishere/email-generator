@@ -25,7 +25,7 @@ function App() {
         </div>
         <div class="card-body">
           <h2 class="card-title">About the project</h2>
-          <p class="card-text">
+          <p class="card-text lead">
             The name of the project is "Domain E-Mail Generator". The main idea
             behind the project is to take four main inputs, i.e. first name,
             last name, domain name and extension. Once the required information
@@ -33,7 +33,7 @@ function App() {
             them together to form a domain e-mail, which can then be copied to
             the clipboard by the user for further usage.
             <hr />
-            <h3 class="card-title">Technologies leveraged</h3>
+            <h4 class="card-title">Technologies leveraged</h4>
             The technologies which have been used in the Domain E-Mail Generator
             project has been listen in the table below, along with a short and
             comprehensive detail about the purpose of the used technology.
@@ -58,7 +58,7 @@ function App() {
                   </td>
                 </tr>
                 <tr>
-                  <th scope="row">1</th>
+                  <th scope="row">2</th>
                   <td>React</td>
                   <td>
                     React is a JavaScript library for building user interfaces
@@ -68,6 +68,13 @@ function App() {
                     Model) approach, which optimizes rendering performance by
                     minimizing DOM updates. React is fast and works well with
                     other tools and libraries.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Bootstrap</td>
+                  <td>
+                  Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.
                   </td>
                 </tr>
               </tbody>
