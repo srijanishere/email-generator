@@ -8,6 +8,7 @@ function App() {
 
   return (
     <div className="container-fluid p-5">
+      <h1 className="my-3">Domain E-Mail Generator</h1>
       <div class="card text-center">
         <div class="card-header">
           <ul class="nav nav-underline">
@@ -22,7 +23,7 @@ function App() {
               </a>
             </li>
             <li className="nav-item">
-            <span class="badge rounded-pill text-bg-dark">Beta</span>
+              <span class="badge text-bg-dark">Try</span>
             </li>
           </ul>
         </div>
@@ -87,7 +88,8 @@ function App() {
             </table>
           </p>
           <div class="card" id="generator">
-            <h5 class="card-header">Domain E-Mail Generator</h5>
+            <h5 class="card-header">Featured</h5>
+
             <div class="card-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">
@@ -111,7 +113,7 @@ function App() {
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">
-                  Domain Name
+                  @
                 </span>
                 <input
                   type="text"
@@ -132,7 +134,22 @@ function App() {
                 Copy
               </button>
             </div>
-            <div class="card-footer text-body-secondary">Made with love by Srijan Bandyopadhyay</div>
+            <div class="card-footer text-body-secondary">
+              Made with love by Srijan Bandyopadhyay &nbsp;
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-heart-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
