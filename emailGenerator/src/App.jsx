@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [domainName, setDomainName] = useState("domain");
@@ -92,7 +93,7 @@ function App() {
               </tbody>
             </table>
           </p>
-          <p className="card-text text-danger lead mb-5"><u>Note</u> : This web-app does NOT collect/store any user data, it's application solely is based on experimental purposes</p>
+          <p className="card-text text-danger lead mb-5"><b>Note</b> : This web-app does NOT collect/store any user data, it's application solely is based on experimental purposes</p>
           <div class="card" id="generator">
             <h5 class="card-header">Featured</h5>
 
@@ -106,6 +107,7 @@ function App() {
                   class="form-control"
                   placeholder="First Name"
                   value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
               <div class="input-group mb-3">
@@ -117,6 +119,7 @@ function App() {
                   class="form-control"
                   placeholder="Last Name"
                   value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
               <div class="input-group mb-3">
@@ -128,12 +131,14 @@ function App() {
                   class="form-control"
                   placeholder="Domain Name"
                   value={domainName}
+                  onChange={(e) => setDomainName(e.target.value)}
                 />
               </div>
               <select
                 class="form-select"
                 aria-label="Default select example"
                 value={extension}
+                onChange={(e) => setExtName(e.target.value)}
               >
                 <option value="com">.com</option>
                 <option value="co.in">.co.in</option>
