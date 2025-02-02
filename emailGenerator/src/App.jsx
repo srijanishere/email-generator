@@ -1,12 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import Table from './components/Table'
 
 function App() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [domainName, setDomainName] = useState("domain");
+  const [domainName, setDomainName] = useState("");
   const [extension, setExtensionName] = useState("com");
   const [emailName, setEmailName] = useState("");
   const [domainExtensionName, setDomainExtensionName] = useState("");
@@ -20,7 +19,6 @@ function App() {
     let value = "@" + domainName + "." + extension;
     setDomainExtensionName(value);
   }, [domainName, extension]);
-
   useEffect(() => {
     generateEmailName();
     generateDomainExtensionName();
@@ -28,7 +26,7 @@ function App() {
 
   const generateEmail = () => {
     return emailName + domainExtensionName;
-  }
+  };
 
   const copyToClipboard = async () => {
     window.navigator.clipboard.writeText(generateEmail());
@@ -70,55 +68,11 @@ function App() {
             The technologies which have been used in the Domain E-Mail Generator
             project has been listen in the table below, along with a short and
             comprehensive detail about the purpose of the used technology.
-            <table class="table my-5">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Technology</th>
-                  <th scope="col">Purpose</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Vite</td>
-                  <td>
-                    Vite is a modern JavaScript build tool that provides
-                    out-of-the-box support for common web patterns, offering
-                    optimized builds with the flexibility and maturity of rollup
-                    paired with a snappy bundleless dev server made possible by
-                    esbuild and native ES modules.
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>React</td>
-                  <td>
-                    React is a JavaScript library for building user interfaces
-                    (UIs) on the web. React is a declarative, component based
-                    library that allows developers to build reusable UI
-                    components and It follows the Virtual DOM (Document Object
-                    Model) approach, which optimizes rendering performance by
-                    minimizing DOM updates. React is fast and works well with
-                    other tools and libraries.
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Bootstrap</td>
-                  <td>
-                    Powerful, extensible, and feature-packed frontend toolkit.
-                    Build and customize with Sass, utilize prebuilt grid system
-                    and components, and bring projects to life with powerful
-                    JavaScript plugins.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <Table />
           </p>
           <p className="card-text text-danger lead mb-5">
             <b>Note</b> : This web-app does NOT collect/store any user data,
-            it's application solely is based on experimental purposes
+            it's application is based solely on experimental purposes
           </p>
           <div class="card" id="generator">
             <h5 class="card-header">Featured</h5>
